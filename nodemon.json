@@ -1,0 +1,11 @@
+{
+    "verbose": true,
+    "execMap": {
+        "js": "node --harmony"
+    },
+    "ignore": [
+        ".git",
+        "node_modules"
+    ],
+    "delay": 1000
+}
