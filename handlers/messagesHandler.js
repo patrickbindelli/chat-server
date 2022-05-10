@@ -1,3 +1,4 @@
+import { userJoin, getUser, userDisconnect } from './dummyuser.js';
 import { uuid } from 'uuidv4'
 const messages = new Set();
 const users = new Map();
@@ -31,9 +32,10 @@ class Connection {
   }
 
   handleMessage(value) {
+    const user = getUser(this.socket.id)
     const message = {
       id: uuid(),
-      user: users.get(this.socket) || defaultUser,
+      user: user,
       value,
       time: Date.now()
     };
